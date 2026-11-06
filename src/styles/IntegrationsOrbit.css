@@ -1,0 +1,407 @@
+/* Container */
+.integrations-section {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 100px 24px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f5fa;
+  margin-top: -60px;
+}
+
+/* Header */
+.integrations-header {
+  max-width: 700px;
+  margin: 0 auto 60px auto;
+}
+
+.integrations-title {
+  font-size: 43px;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+.integrations-subtitle {
+  font-size: 17px;
+  color: #556377;
+  line-height: 1.5;
+}
+
+/* Orbit Stage Wrapper — Relative stage container */
+.orbit-stage {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   Corner Cards Independent Wrappers
+   Aap in values (top, left, right, bottom) ko apnay hisab
+   se change karky spacing adjust kar sakty hain.
+   ========================================================= */
+
+.card-wrapper-top-left {
+  position: absolute;
+  top: -20px;
+  left: -80px;
+  z-index: 15;
+  margin-left: -90px;
+  color: #147f4b;
+}
+
+.card-wrapper-top-right {
+  position: absolute;
+  top: -20px;
+  right: -80px;
+  z-index: 15;
+  margin-left: -90px;
+}
+
+.card-wrapper-bottom-left {
+  position: absolute;
+  bottom: -20px;
+  left: -80px;
+  z-index: 15;
+   margin-left: -90px;
+
+}
+
+.card-wrapper-bottom-right {
+  position: absolute;
+  bottom: -20px;
+  right: -80px;
+  z-index: 15;
+  margin-right: -90px;
+}
+
+/* Corner Feature Cards Inner Box */
+.corner-feature-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 16px 20px;
+  border-radius: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: 0 14px 35px -8px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  max-width: 250px;
+}
+
+.corner-feature-card h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 4px 0;
+}
+
+.corner-feature-card p {
+  font-size: 16px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.corner-icon {
+  font-size: 19px;
+  background: #f1f5f9;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+/* Enterprise Security Card — Special styling */
+.enterprise-security-card {
+  border: 2px solid #26b06d;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+}
+
+.enterprise-security-card h4 {
+  color: #147f4b;
+}
+
+.enterprise-security-card p {
+  color: #1e293b;
+}
+
+.Lightning-Fast-Sync-card{
+border: 2px solid #d98947;
+  background: linear-gradient(135deg, #fcf4e2 0%, #fff7e6 100%);
+}
+
+.Lightning-Fast-Sync-card h4{
+  color:#d98947;
+}
+
+.Real-Time-Alerts-card{
+  border: 2px solid #a11c84;
+  background: linear-gradient(135deg, #fcd8f2 0%, #feeafb 100%);
+}
+
+.Real-Time-Alerts-card h4{
+    color:#a11c84;
+}
+/* Smart Data Pipelines Card — Special styling */
+.smart-data-pipelines-card {
+  border: 2px solid #6ec1e4;
+  background: linear-gradient(135deg, #f0f9ff 0%, #f1f5f9 100%);
+}
+
+.smart-data-pipelines-card h4 {
+  color: #0c4a6e;
+}
+
+.smart-data-pipelines-card p {
+  color: #1e293b;
+}
+
+/* Smooth Floating Animations for Corners */
+@keyframes cornerFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-corner-float {
+  animation: cornerFloat 3.5s ease-in-out infinite;
+}
+
+.animate-corner-float-delayed {
+  animation: cornerFloat 3.5s ease-in-out infinite 1.5s;
+}
+
+/* Rotating orbit system */
+.orbit-system {
+  position: absolute;
+  inset: 0;
+  animation: orbit-spin 30s linear infinite;
+  will-change: transform;
+}
+
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes badge-counter-spin {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.orbit-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Center Core Logo — Chhota size */
+.orbit-center-core {
+  position: relative;
+  z-index: 10;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #26b06d 0%, #147f4b 100%);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 0 40px rgba(38, 176, 109, 0.4);
+}
+
+.core-logo-icon {
+  font-size: 19px;
+  margin-bottom: 2px;
+}
+
+.core-logo-text {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Floating Integration Tool Badges */
+.badge-slot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.orbit-badge {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  padding: 6px 12px;
+  display: flex;
+  border-radius: 8px;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+  white-space: nowrap;
+  animation: badge-counter-spin 30s linear infinite;
+  transition: box-shadow 0.2s ease, scale 0.2s ease;
+}
+
+.orbit-badge:hover {
+  scale: 1.08;
+  box-shadow: 0 14px 30px -5px rgba(0, 0, 0, 0.14);
+}
+
+.tool-icon {
+  font-size: 15px;
+}
+
+/* Badges positions */
+.badge-notion { top: 50%; left: 19.3%; }
+.badge-github { top: 50%; left: 80.7%; }
+.badge-zoom { top: 33.4%; left: 34.6%; }
+.badge-slack { top: 33.4%; left: 65.4%; }
+.badge-whatsapp { top: 66.6%; left: 34.6%; }
+.badge-stripe { top: 66.6%; left: 65.4%; }
+.badge-gmail { top: 19%; left: 50%; }
+.badge-hubspot { top: 81%; left: 50%; }
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .orbit-stage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+    padding: 0 0 8px;
+    gap: 12px;
+    align-items: stretch;
+    justify-items: stretch;
+  }
+
+  /* Orbit visual — row 1 full width */
+  .orbit-system {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 380px;
+  }
+
+  .orbit-center-core {
+    position: absolute;
+    top: 190px; /* orbit-system ki half height */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  /* 4 corner cards — ab grid me orbit ke niche (2 x 2) */
+  .card-wrapper-top-left,
+  .card-wrapper-top-right,
+  .card-wrapper-bottom-left,
+  .card-wrapper-bottom-right {
+    position: static;
+    margin: 0;
+    z-index: auto;
+    width: 100%;
+  }
+
+  .card-wrapper-top-left { grid-column: 1; grid-row: 2; }
+  .card-wrapper-top-right { grid-column: 2; grid-row: 2; }
+  .card-wrapper-bottom-left { grid-column: 1; grid-row: 3; }
+  .card-wrapper-bottom-right { grid-column: 2; grid-row: 3; }
+
+  .corner-feature-card {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  .corner-feature-card h4 {
+    font-size: 18px;
+  }
+
+  .corner-feature-card p {
+    font-size: 15px;
+  }
+
+  .orbit-badge {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .integrations-section {
+    padding: 64px 16px;
+  }
+  .integrations-title {
+    font-size: 31px;
+    letter-spacing: -0.5px;
+  }
+}
+
+@media (max-width: 640px) {
+  .orbit-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .card-wrapper-top-left,
+  .card-wrapper-top-right,
+  .card-wrapper-bottom-left,
+  .card-wrapper-bottom-right {
+    grid-column: 1;
+  }
+
+  .card-wrapper-top-left { grid-row: 2; }
+  .card-wrapper-top-right { grid-row: 3; }
+  .card-wrapper-bottom-left { grid-row: 4; }
+  .card-wrapper-bottom-right { grid-row: 5; }
+
+  .orbit-system {
+    height: 320px;
+  }
+
+  .orbit-center-core {
+    top: 160px;
+  }
+
+  .orbit-badge {
+    padding: 4px 8px;
+    font-size: 13px;
+    gap: 4px;
+  }
+
+  .orbit-badge svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-system,
+  .orbit-badge,
+  .animate-corner-float,
+  .animate-corner-float-delayed {
+    animation: none;
+  }
+}
+

@@ -1,0 +1,126 @@
+/* ============================================
+   PulseCRM Global Theme
+   #0A382D — Menu + main buttons
+   #26B06D — icons, fills, badges
+   #147F4B — green text and links
+   #003057 — avatars, info pills
+   #6EC1E4 — small accents
+   #F0F5FA — page background
+   #1E293B — body text
+   #556377 — secondary text
+   ============================================ */
+:root {
+  --clr-menu: #0a382d;        /* menu + main buttons */
+  --clr-fill: #26b06d;        /* icons, fills, badges */
+  --clr-green-text: #147f4b;  /* green text and links */
+  --clr-avatar: #003057;      /* avatars, info pills */
+  --clr-accent: #6ec1e4;      /* small accents */
+  --clr-cta-bg: #003057;      /* CTA banner navy background */
+  --clr-page-bg: #f0f5fa;     /* page background */
+  --clr-text: #1e293b;        /* body text */
+  --clr-text-secondary: #556377; /* secondary text */
+}
+
+/* ============================================
+   Global Reset
+   ============================================ */
+
+/* box-sizing: border-box — sabse zaroori fix.
+   Iske bina `max-width: 1280px` + `padding: 24px` wale sections
+   actually 1328px wide ho jaate hain (content-box math),
+   aur `.hero-section` (width:100% + padding) har viewport par
+   48px extra width le kar horizontal scrollbar bana deta hai. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* html { overflow-x: hidden } → scroll container ban jaata hai aur
+   `position: sticky` (StickyFeatures left column) toot jaata hai.
+   `clip` scroll container NAHI banata, sticky safe rehta hai. */
+html {
+  overflow-x: hidden;
+}
+
+@supports (overflow: clip) {
+  html {
+    overflow-x: clip;
+  }
+}
+
+/* Global Reset — browser ka default 8px body margin hatao,
+   taake CtaBanner jaise dark/full-width sections ki sides par
+   white space (strips) na dikhein */
+body {
+  margin: 0;
+  background-color: #f0f5fa; /* page background */
+  color: #1e293b;            /* body text */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* html overflow-x: clip/handle prevents horizontal scroll while keeping sticky working */
+  overflow-x: hidden;
+}
+/* ============================================
+   Global Responsive Rules
+   ============================================ */
+
+img,
+picture,
+video,
+iframe,
+figure,
+blockquote {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+hr {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 24px 0;
+}
+
+/* Ensure tables don't break layout on mobile — scoped to avoid
+   breaking wide comparison tables that need horizontal scroll */
+thead th,
+thead td {
+  width: auto;
+}
+
+.comparison-table thead th,
+.comparison-table thead td {
+  white-space: nowrap;
+}
+
+/* Make form labels block on small screens */
+@media (max-width: 640px) {
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+}
+
+/* Global safety: prevent layout containers from causing horizontal overflow */
+section,
+div,
+main,
+header,
+footer,
+aside,
+article {
+  max-width: 100%;
+}
+

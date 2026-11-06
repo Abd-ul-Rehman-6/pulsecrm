@@ -1,0 +1,228 @@
+/* Container */
+.about-section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 100px 24px 60px 24px;
+  background-color: #f0f5fa; /* page background */
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+/* Top 2-Column Info Header */
+.about-header-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 80px;
+}
+
+.about-title {
+ 
+  font-size: 53px;
+  font-weight: 500;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin-top: -50px;
+  
+}
+
+.about-description {
+  font-size: 20px;
+  line-height: 1.65;
+  color: #556377;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Bottom Trusted Brands Banner */
+.trusted-logos-banner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 40px;
+  min-width: 0;
+}
+
+.trusted-text-block {
+  flex: 0 0 auto; /* shrink allowed on small screens */
+  min-width: auto;
+  border-right: 1px solid #cbd5e1;
+  padding-right: 32px;
+  z-index: 2;
+  background: #f0f5fa;
+}
+
+.trusted-text-block p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  color: #1e293b;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+/* Scrolling Marquee Wrapper */
+.marquee-wrapper {
+  flex: 1;
+  min-width: 0; /* flex item min-width:auto se marquee overflow kar sakta hai */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  white-space: nowrap;
+  animation: scrollMarquee 25s linear infinite;
+}
+
+.marquee-track.paused {
+  animation-play-state: paused;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Brand Logo Items Style */
+.brand-logo-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.brand-logo-item:hover {
+  opacity: 0.8;
+}
+
+.brand-icon {
+  color: #26b06d; /* Purple accent matching screenshot */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #556377;
+  letter-spacing: -0.3px;
+}
+
+/* Carousel Pause Toggle Button */
+.pause-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 4px;
+  margin-left: 20px;
+  transition: background-color 0.2s ease;
+  z-index: 2;
+}
+
+.pause-btn:hover {
+  background-color: #ffffff;
+}
+
+/* Responsive View */
+@media (max-width: 900px) {
+  .about-header-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-title {
+    font-size: 39px;
+  }
+
+  .trusted-logos-banner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    gap: 16px 12px;
+  }
+
+  .trusted-text-block {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    border-right: none;
+    border-bottom: 1px solid #cbd5e1;
+    padding-right: 0;
+    padding-bottom: 16px;
+    width: 100%;
+    flex: none;
+    min-width: 0;
+  }
+
+  .marquee-wrapper {
+    grid-column: 1;
+    grid-row: 2;
+    flex: none;
+    width: 100%;
+    align-self: center;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .pause-btn {
+    grid-column: 2;
+    grid-row: 2;
+    margin-left: 0;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-section-container {
+    padding: 56px 20px 40px;
+  }
+  .about-title {
+    font-size: 29px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section-container {
+    padding: 48px 16px 32px;
+  }
+  .about-title {
+    font-size: 27px;
+  }
+  .about-description {
+    font-size: 18px;
+  }
+  .trusted-logos-banner {
+    gap: 16px;
+    padding-top: 32px;
+  }
+  .brand-logo-item {
+    gap: 8px;
+  }
+  .brand-name {
+    font-size: 16px;
+  }
+}
+

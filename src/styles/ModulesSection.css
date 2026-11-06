@@ -1,0 +1,147 @@
+/* --- MODULES / ROADMAP SECTION --- */
+.modules-section {
+  width: 100%;
+  background-color: #f0f5fa;
+  padding: 100px 24px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.modules-container {
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* Module Card */
+.module-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px 24px;
+  box-shadow: 0 10px 30px rgba(10, 56, 45, 0.06);
+  border: 1px solid rgba(38, 176, 109, 0.2);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.module-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(10, 56, 45, 0.12);
+}
+
+/* Module Header: Number + Status */
+.module-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.module-number {
+  font-size: 21px;
+  font-weight: 800;
+  color: #0a382d;
+  letter-spacing: -0.5px;
+}
+
+.module-status {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.module-status.done {
+  background: #dcfce7;
+  color: #147f4b;
+}
+
+.module-status.in-progress {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.module-status.staging {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+/* Module Title */
+.module-title {
+  font-size: 21px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
+
+/* Module Features List */
+.module-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.module-features li {
+  font-size: 15px;
+  color: #334155;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 20px;
+}
+
+.module-features li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #26b06d;
+  font-weight: 800;
+  font-size: 17px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modules-section {
+    padding: 60px 16px;
+  }
+
+  .module-card {
+    padding: 24px 16px;
+  }
+
+  .module-title {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modules-section {
+    padding: 50px 16px;
+  }
+
+  .modules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .module-card {
+    padding: 20px 16px;
+  }
+
+  .module-title {
+    font-size: 19px;
+  }
+}
+

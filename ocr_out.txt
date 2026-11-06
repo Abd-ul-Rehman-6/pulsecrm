@@ -1,0 +1,78 @@
+PATH_EXISTS: True
+FILE_OK
+LINE|24|0|Free
+LINE|23|0|Start generating and emailing new
+LINE|23|0|leads, and measuring your success -
+LINE|23|0|for free
+LINE|24|0|$0/mo
+LINE|24|0|Free for up to 2 users. No credit card
+LINE|23|0|required.
+LINE|95|0|Get started free
+LINE|24|0|Includes:
+LINE|68|0|Free Marketing tools
+LINE|68|0|Free Sales tools
+LINE|68|0|Free Service tools
+LINE|68|0|Free Content tools
+LINE|68|0|Free Data tools
+LINE|328|0|Starter
+LINE|328|0|Essential marketing, sales, service,
+LINE|327|0|content, and data management
+LINE|327|0|software
+LINE|327|0|Starts at
+LINE|328|0|$ 7 /mo/seat
+LINE|632|0|Professional
+LINE|632|0|For marketing teams who want to
+LINE|631|0|effectively run omni-channel
+LINE|631|0|campaigns, automation, and reporting
+LINE|630|0|to build a scalable demand engine
+LINE|631|0|Starts at
+LINE|632|0|$800/mo
+LINE|631|0|Includes 3 Core Seats
+LINE|631|0|Additional Core Seats start at $45/mo
+LINE|355|0|Pay Monthly
+LINE|345|0|Commit monthly
+LINE|480|0|Pay Annually
+LINE|481|0|BEST VALUE
+LINE|659|0|Pay Monthly
+LINE|648|0|Commit annually
+LINE|783|0|Pay Annually
+LINE|784|0|BEST VALUE
+LINE|425|0|Buy now
+LINE|400|0|Talk to Sales
+LINE|327|0|500 HubSpot Credits @
+LINE|328|0|1,000 marketing contacts
+LINE|328|0|Free tools with increased limits, plus
+LINE|328|0|remove HubSpot branding from:
+LINE|354|0|Email marketing
+LINE|328|0|V Live chat
+LINE|327|0|And:
+LINE|704|0|Talk to sales
+LINE|631|0|3,000 HubSpot Credits @
+LINE|631|0|2,000 marketing contacts
+LINE|632|0|Marketing Hub Starter, plus:
+LINE|658|0|Marketing studio BETA
+LINE|657|0|AEO BETA
+LINE|657|0|Content Agent BETA
+LINE|658|0|Nurture Agent BETA
+LINE|657|0|Social media
+LINE|657|0|Video creation & editing
+LINE|935|0|Enterprise
+LINE|935|0|For marketing organizations seeking
+LINE|935|0|power, flexibility, and governance to
+LINE|934|0|orchestrate data-driven customer
+LINE|934|0|journeys at scale and accelerate
+LINE|935|0|reven ue growth
+LINE|934|0|Starts at
+LINE|935|0|$3,600/mo
+LINE|935|0|Includes 5 Core Seats
+LINE|934|0|Additional Core Seats start at $75/mo
+LINE|1007|0|Talk to sales
+LINE|934|0|5,000 HubSpot Credits @
+LINE|935|0|10,000 marketing contacts
+LINE|935|0|Marketing Hub Professional, plus:
+LINE|961|0|Multi-touch revenue attribution
+LINE|961|0|Lookalike Segments BETA
+LINE|960|0|Customer journey analytics
+LINE|961|0|Email approvals
+LINE|961|0|Limit access to content and data
+LINE|961|0|Behavioral event triggers and

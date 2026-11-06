@@ -1,0 +1,138 @@
+/* CTA Banner Container — Navy (alag se Navbar/Footer ke green se) */
+.cta-banner-section {
+  background-color: #003057;
+  background-image:
+    radial-gradient(circle at 88% 15%, rgba(110, 193, 228, 0.28), transparent 45%),
+    radial-gradient(circle at 8% 90%, rgba(38, 176, 109, 0.26), transparent 42%),
+    linear-gradient(135deg, #003057 0%, #01426e 55%, #002a49 100%);
+  background-attachment: fixed;
+  padding: 100px 24px;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  border-top: 1px solid rgba(110, 193, 228, 0.18);
+  border-bottom: 1px solid rgba(110, 193, 228, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle grid texture for depth */
+.cta-banner-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+
+.cta-banner-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Headline Styling */
+.cta-headline {
+  
+  font-size: 57px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #ffffff;
+  max-width: 900px;
+  margin: 0 0 40px 0;
+  letter-spacing: -0.5px;
+}
+
+/* Accent Dot */
+.brand-dot {
+  color: #6ec1e4; /* small accent */
+}
+
+/* Headline underline accent bar */
+.cta-headline::after {
+  content: '';
+  display: block;
+  width: 96px;
+  height: 4px;
+  margin-top: 28px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #26b06d 0%, #6ec1e4 100%);
+}
+
+/* Buttons Flex Wrapper */
+.cta-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Primary Fill Button */
+.cta-btn-primary {
+  background-color: #26b06d; /* fill */
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cta-btn-primary:hover {
+  background-color: #147f4b;
+  transform: translateY(-2px);
+}
+
+/* Secondary Outline Button */
+.cta-btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.cta-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: #6ec1e4;
+  transform: translateY(-2px);
+}
+
+/* Responsive View */
+@media (max-width: 768px) {
+  .cta-banner-section {
+    padding: 60px 20px;
+    background-attachment: scroll;
+  }
+  .cta-headline {
+    font-size: 37px;
+  }
+  .cta-buttons-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .cta-btn-primary,
+  .cta-btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-banner-section {
+    padding: 50px 16px;
+  }
+  .cta-headline {
+    font-size: 31px;
+  }
+}
+

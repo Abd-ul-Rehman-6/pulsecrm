@@ -1,0 +1,609 @@
+/* Sticky Header Container — Menu */
+.navbar-header {
+  width: 100%;
+  background-color: #0a382d; /* menu */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  font-family: 'poppin', sans-serif;
+}
+
+/* Inner Layout Alignment */
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* Logo Section */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background-color: #26b06d; /* fill */
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 2px 4px rgba(38, 176, 109, 0.35);
+}
+
+.logo-text {
+  font-size: 21px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+/* Navigation Links */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  font-size: 20px;
+  font-weight: 500;
+  color: #f0f5fa;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #fdfeff; /* accent */
+}
+
+/* Active page link highlight */
+.nav-link.active {
+  color: #fcfeff; /* bright accent for active page */
+  font-weight: 600;
+  
+  padding-bottom: 4px;
+}
+
+/* --- RESOURCES MEGA DROPDOWN STYLING (WITH IMAGE PREVIEW) --- */
+.dropdown-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+}
+
+.dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 100%; /* Poori height cover karega taake mouse move smooth rahe */
+}
+
+.dropdown-arrow {
+  font-size: 13px;
+  color: #fbfbfb;
+}
+
+/* Mega Dropdown Container (Wider layout for list + image preview) */
+.resources-mega-dropdown {
+  position: absolute;
+  top: 100%; /* Navbar ke neechye bilkul sath attach rahega without gap */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 680px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  border: 1px solid #f1f5f9;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 16px;
+  z-index: 200;
+  animation: fadeInDropdown 0.15s ease-out;
+}
+
+@keyframes fadeInDropdown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.dropdown-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Dropdown Item Card */
+.dropdown-item-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.dropdown-item-card:hover,
+.dropdown-item-card.active-preview {
+  background-color: #f1f5f9;
+}
+
+/* Icon Box */
+.item-icon-box {
+  width: 42px;
+  height: 42px;
+  background-color: #f1f5f9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  color: #334155;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.external-arrow {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  color: #26b06d;
+}
+
+/* Text Content */
+.item-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.item-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 0.5px;
+}
+
+
+
+
+.item-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 400;
+}
+
+/* Right Side Image Preview Pane */
+.dropdown-preview-pane {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.03);
+}
+
+.preview-dynamic-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  margin-bottom: 16px;
+  border: 2px solid #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.preview-dynamic-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+.preview-caption {
+  font-size: 14px;
+  color: #334155;
+}
+
+.preview-caption strong {
+  display: block;
+  font-size: 19px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.preview-caption p {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Right Section Actions */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0; /* actions compress na hon */
+}
+
+.login-link {
+  font-size: 18px;
+  font-weight: 500;
+  color: #f0f5fa;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.login-link:hover {
+  color: #6ec1e4; /* accent */
+}
+
+/* Main CTA Button (dark menu par bright fill) */
+.btn-cta {
+  background-color: #26b06d; /* fill */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(38, 176, 109, 0.35);
+}
+
+.btn-cta:hover {
+  background-color: #147f4b;
+  box-shadow: 0 4px 12px rgba(38, 176, 109, 0.45);
+  transform: translateY(-1px);
+}
+
+/* User Profile Image */
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 2px #6ec1e4; /* accent */
+}
+
+/* Mobile Hamburger Button — hidden on desktop */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+.hamburger-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.hamburger-btn.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Responsive — Hamburger shows at/below 860px */
+@media (max-width: 860px) {
+  .navbar-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  /* Hide desktop menu items and actions that don't fit mobile */
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #0a382d;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+    padding: 12px 20px 20px;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    z-index: 150;
+  }
+
+  .navbar-menu.mobile-open {
+    display: flex;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Safety: mobile pe dropdown tabhi dikhe jab drawer khula ho */
+  .navbar-menu:not(.mobile-open) .resources-mega-dropdown {
+    display: none !important;
+  }
+
+  /* Agar dropdown somehow drawer ke bahar render ho jaye to usey bhi hide */
+  .resources-mega-dropdown {
+    position: static !important;
+    transform: none !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .navbar-menu .nav-link {
+    display: block;
+    padding: 14px 4px;
+    font-size: 17px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .navbar-menu .nav-link.active {
+    padding-bottom: 14px;
+    color: #6ec1e4;
+  }
+
+  .dropdown-wrapper {
+    display: block;
+    height: auto;
+  }
+
+  .dropdown-trigger {
+    height: auto;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* Mega dropdown becomes a static panel inside drawer */
+  .navbar-menu.mobile-open .resources-mega-dropdown {
+    position: static;
+    transform: none;
+    width: 100%;
+    grid-template-columns: 1fr;
+    margin-top: 8px;
+    padding: 12px;
+    border-radius: 14px;
+    animation: none;
+    box-shadow: none;
+  }
+
+  .dropdown-preview-pane {
+    display: none; /* mobile pe sirf links list */
+  }
+
+  /* Actions: compress so logo + CTA + hamburger fit */
+  .navbar-actions {
+    gap: 10px;
+  }
+
+  .login-link {
+    display: none;
+  }
+
+  .btn-cta {
+    padding: 10px 14px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .logo-text {
+    font-size: 19px;
+  }
+
+  .navbar-container {
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .navbar-logo {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .navbar-actions {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .btn-cta {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+  .logo-text {
+    font-size: 17px;
+  }
+}
+
+/* Bohot chhote screens (320px ya DevTools custom width) —
+   logo-text chhupa do taake CTA + hamburger kabhi clip na ho */
+@media (max-width: 360px) {
+  .navbar-container {
+    padding: 0 12px;
+    gap: 8px;
+  }
+  .logo-text {
+    display: none;
+  }
+  .btn-cta {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Tablet — 1024px: compress navbar so menu + actions fit without horizontal overflow */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 20px;
+    gap: 10px;
+  }
+
+  .navbar-menu {
+    gap: 14px;
+    min-width: 0;
+  }
+
+  .nav-link {
+    font-size: 17px;
+  }
+
+  .navbar-actions {
+    gap: 12px;
+  }
+
+  .login-link {
+    font-size: 16px;
+  }
+
+  .btn-cta {
+    padding: 10px 18px;
+    font-size: 15px;
+  }
+
+  .profile-avatar {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* Small mobile (320px–480px): tighter navbar, hide logo text if needed */
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 16px;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .navbar-logo {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .logo-text {
+    font-size: 19px;
+  }
+
+  .btn-cta {
+    padding: 10px 16px;
+    font-size: 15px;
+  }
+
+  .login-link {
+    font-size: 15px;
+  }
+
+  .navbar-actions {
+    gap: 8px;
+  }
+
+  .hamburger-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hamburger-btn span {
+    width: 16px;
+  }
+
+  .navbar-menu {
+    padding: 10px 16px 16px;
+  }
+
+  .navbar-menu .nav-link {
+    font-size: 17px;
+    padding: 12px 4px;
+  }
+}
+
+/* Extra small mobile (320px and below): hide logo text to prevent clipping */
+@media (max-width: 360px) {
+  .navbar-container {
+    padding: 0 12px;
+    gap: 6px;
+  }
+  .logo-text {
+    display: none;
+  }
+  .btn-cta {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Ensure body doesn't scroll when mobile drawer is open */
+body.nav-menu-open {
+  overflow: hidden;
+}
+

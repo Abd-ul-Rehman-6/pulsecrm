@@ -1,0 +1,289 @@
+/* Section Container */
+.video-cards-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 24px 96px;
+  font-family: 'poppin', sans-serif;
+}
+
+/* Cards Row — flex layout taake hover par card expand ho (HubSpot style) */
+.cards-grid {
+  display: flex;
+  gap: 24px;
+  height: 500px;
+  min-width: 0;
+}
+
+/* Card Item */
+.video-card {
+  position: relative;
+  /* flex 1 se teeno cards barabar, hover par .is-expanded se chora */
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: flex 0.55s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+/* Hover par expanded card */
+.video-card.is-expanded {
+  flex: 2.4 1 0;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+}
+
+/* Media Wrapper (Image & Video) — poori card ko fill karta hai */
+.media-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Chhoti floating video panel (jaise crm.png screenshot mein) —
+   image rehti hai, uske left side par chhota video panel dikhta hai */
+.video-preview-panel {
+  position: absolute;
+  left: 5%;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 48%;
+  aspect-ratio: 3 / 2;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.35s ease; /* sirf fade — koi scale/zoom nahi */
+}
+
+/* Hover par panel sirf fade hokar aata hai (bina zoom ke) */
+.video-card.is-expanded .video-preview-panel {
+  opacity: 1;
+}
+
+.card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  background-color: #f0f5fa;
+}
+
+/* Dark Gradient Overlay for text readability */
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.82) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hover Play Icon Badge — screenshot jaisa dhaundra (gray translucent) circle */
+.play-hover-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 68px;
+  background-color: rgba(60, 60, 60, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transition: opacity 0.3s ease; /* sirf fade — koi scale/zoom nahi */
+  z-index: 3;
+  pointer-events: none;
+}
+
+.video-card.is-expanded .play-hover-badge {
+  opacity: 1;
+}
+
+.play-icon-svg {
+  width: 26px;
+  height: 26px;
+  color: #ffffff;
+  margin-left: 3px; /* visual center balance */
+}
+
+/* Card Content / Title */
+.card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+
+  z-index: 2;
+}
+
+.card-title {
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+  transition: font-size 0.4s ease;
+  color: #f0f5fa;
+}
+
+/* Jab koi aur card expand ho to titles thora chota ho jaye (narrow card) */
+.video-card:not(.is-expanded) .card-title {
+  font-size: 20px;
+}
+
+/* ============ Modal Popup (HubSpot style lightbox) ============ */
+.video-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 48px 24px;
+  backdrop-filter: blur(4px);
+  animation: overlayFadeIn 0.25s ease;
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* White panel jo center se expand hota hai (video jaisa) */
+.video-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.5);
+  animation: modalExpandIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes modalExpandIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-video-player {
+  width: 100%;
+  max-height: 80vh;
+  display: block;
+  background-color: #000;
+}
+
+/* Close button — screen ke top-right corner par (jaise HubSpot video mein) */
+.modal-close-btn {
+  position: fixed;
+  top: 22px;
+  right: 30px;
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 29px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  z-index: 1001;
+}
+
+.modal-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* Responsive — mobile/tablet par cards stack, expand effect off */
+@media (max-width: 1024px) {
+  .cards-grid {
+    flex-direction: column;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    gap: 24px;
+  }
+
+  .video-card {
+    flex: none;
+    height: 320px;
+  }
+
+  .video-card.is-expanded {
+    flex: none;
+  }
+
+  .video-card:not(.is-expanded) .card-title {
+    font-size: 23px;
+  }
+
+  .modal-close-btn {
+    top: 14px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-cards-section {
+    padding: 50px 16px 80px;
+  }
+
+  .video-card {
+    height: 260px;
+  }
+
+  .card-title {
+    font-size: 21px;
+  }
+
+  .video-card:not(.is-expanded) .card-title {
+    font-size: 21px;
+  }
+
+  .modal-close-btn {
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+  }
+}
+
