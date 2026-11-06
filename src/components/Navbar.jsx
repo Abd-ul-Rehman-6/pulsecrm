@@ -111,7 +111,8 @@ const Navbar = () => {
       icon: <Lightbulb size={16} />,
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600",
       link: "/why",
-      isExternal: false
+      isExternal: false,
+      isHighlighted: false,
     },
     {
       title: "USER GUIDE",
@@ -121,7 +122,8 @@ const Navbar = () => {
       icon: <BookOpen size={16} />,
       image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=600",
       link: "/user-guide",
-      isExternal: true
+      isExternal: true,
+      isHighlighted: false,
     },
     {
       title: "DEVELOPERS",
@@ -131,7 +133,8 @@ const Navbar = () => {
       icon: <Code size={16} />,
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600",
       link: "/developers",
-      isExternal: true
+      isExternal: true,
+      isHighlighted: false,
     },
     {
       title: "APPS",
@@ -141,7 +144,8 @@ const Navbar = () => {
       icon: <Settings size={16} />,
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
       link: "/apps",
-      isExternal: false
+      isExternal: false,
+      isHighlighted: false,
     },
     {
       title: "PARTNERS",
@@ -151,7 +155,8 @@ const Navbar = () => {
       icon: <Users size={16} />,
       image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600",
       link: "/partners",
-      isExternal: false
+      isExternal: false,
+      isHighlighted: false,
     },
     {
       title: "RELEASES",
@@ -162,7 +167,7 @@ const Navbar = () => {
       image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=600",
       link: "/releases",
       isExternal: false,
-      isHighlighted: true
+      isHighlighted: true,
     }
   ];
 
@@ -225,7 +230,10 @@ const Navbar = () => {
                       href={item.link}
                       className={`dropdown-item-card ${activeResourceIdx === idx ? 'active-preview' : ''}`}
                       onMouseEnter={() => setActiveResourceIdx(idx)}
-                      onClick={closeAllMenus}
+                      onClick={() => {
+                        setActiveResourceIdx(idx);
+                        closeAllMenus();
+                      }}
                     >
                       <div className="item-icon-box">
                         {item.icon}

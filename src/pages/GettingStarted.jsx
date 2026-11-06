@@ -29,6 +29,9 @@ const GettingStarted = () => {
       {/* Sub Navigation Bar */}
       <nav className="doc-sub-nav">
         <div className="doc-nav-left">
+          <Link to="/" className="doc-nav-logo-link" aria-label="Home">
+            <span className="doc-nav-logo">P</span>
+          </Link>
           <Link to="/docs/getting-started" className="doc-nav-link active">
             GETTING STARTED
           </Link>

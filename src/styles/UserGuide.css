@@ -16,6 +16,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
+  flex-wrap: nowrap; /* links + buttons hamesha ek line pe */
   padding: 0 40px;
   box-sizing: border-box;
   background-color: #0b0c0e;
@@ -28,6 +30,9 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  flex-wrap: nowrap;
+  min-width: 0;
+  flex: 1;
 }
 
 .doc-nav-link {
@@ -37,6 +42,38 @@
   font-weight: 700;
   letter-spacing: 0.8px;
   transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+/* Pulse logo — GETTING STARTED ke saath, click pe home page */
+.doc-nav-logo-link {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.doc-nav-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background-color: #26b06d;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: 5px;
+  flex-shrink: 0;
+  letter-spacing: 0;
+  transition: transform 0.15s ease;
+}
+
+.doc-nav-logo-link:hover .doc-nav-logo {
+  transform: scale(1.08);
 }
 
 .doc-nav-link:hover {
@@ -57,6 +94,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-shrink: 0; /* buttons kabhi wrap karke niche na jayen */
 }
 
 .doc-btn-login {
@@ -364,13 +402,20 @@
     height: auto;
     min-height: 56px;
     padding: 10px 16px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* buttons line ke andar hi rahen */
     gap: 10px;
   }
 
   .doc-nav-left {
-    gap: 12px;
-    flex-wrap: wrap;
+    gap: 10px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .doc-nav-left::-webkit-scrollbar {
+    display: none;
   }
 
   .doc-nav-link {
@@ -378,14 +423,21 @@
     letter-spacing: 0.5px;
   }
 
+  .doc-nav-logo {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+
   .doc-nav-right {
-    gap: 10px;
+    gap: 8px;
   }
 
   .doc-nav-right .doc-btn-login,
   .doc-nav-right .doc-btn-get-started {
-    padding: 8px 12px;
-    font-size: 12px;
+    padding: 7px 10px;
+    font-size: 11px;
+    white-space: nowrap;
   }
 
   .user-guide-container {
@@ -444,8 +496,21 @@
   .user-guide-title {
     font-size: 29px;
   }
+  .doc-sub-nav {
+    padding: 8px 12px;
+  }
   .doc-nav-left .doc-nav-divider {
     display: none;
+  }
+  .doc-nav-left {
+    gap: 8px;
+  }
+  .doc-nav-link {
+    font-size: 11px;
+    letter-spacing: 0.3px;
+  }
+  .doc-nav-right .doc-btn-login {
+    display: none; /* chhoti screen pe sirf GET STARTED */
   }
 }
 
