@@ -210,9 +210,7 @@ const Navbar = () => {
             <span
               className="nav-link dropdown-trigger"
               onClick={() => {
-                if (isMobile) {
-                  setIsResourcesOpen((v) => !v);
-                }
+                setIsResourcesOpen((v) => !v);
               }}
             >
               Resources <span className="dropdown-arrow">▾</span>
@@ -226,7 +224,7 @@ const Navbar = () => {
                       key={idx}
                       href={item.link}
                       className={`dropdown-item-card ${activeResourceIdx === idx ? 'active-preview' : ''}`}
-                      onMouseEnter={() => !isMobile && setActiveResourceIdx(idx)}
+                      onMouseEnter={() => setActiveResourceIdx(idx)}
                       onClick={closeAllMenus}
                     >
                       <div className="item-icon-box">
