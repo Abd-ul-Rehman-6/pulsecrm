@@ -258,29 +258,28 @@ const Navbar = () => {
 
         <div className="navbar-actions">
           <button className="btn-cta">Get Started Free</button>
-        </div>
-
-        <button
-          className={`hamburger-btn ${isMobileMenuOpen ? "active" : ""}`}
-          aria-label="Toggle menu"
-          aria-expanded={isMobileMenuOpen}
-          onClick={() => {
-            const next = !isMobileMenuOpen;
-            setIsMobileMenuOpen(next);
-            setIsResourcesOpen(false);
-            if (typeof document !== 'undefined') {
-              if (next) {
-                document.body.classList.add('nav-menu-open');
-              } else {
-                document.body.classList.remove('nav-menu-open');
+          <button
+            className={`hamburger-btn ${isMobileMenuOpen ? "active" : ""}`}
+            aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            onClick={() => {
+              const next = !isMobileMenuOpen;
+              setIsMobileMenuOpen(next);
+              setIsResourcesOpen(false);
+              if (typeof document !== 'undefined') {
+                if (next) {
+                  document.body.classList.add('nav-menu-open');
+                } else {
+                  document.body.classList.remove('nav-menu-open');
+                }
               }
-            }
-          }}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+            }}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
 
       </div>
     </header>
