@@ -127,7 +127,17 @@ const Navbar = () => {
       isHighlighted: false,
     },
    
-    
+    {
+      title: "PARTNERS",
+      subtitle: "Find a Pulse partner",
+      previewTitle: "Team up with a Pulse expert",
+      previewDesc: "Meet the certified agencies and consultants implementing Pulse for teams worldwide.",
+      icon: <Users size={16} />,
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600",
+      link: "/partners",
+      isExternal: false,
+      isHighlighted: false,
+    },
     {
       title: "RELEASES",
       subtitle: "Discover what's new",
