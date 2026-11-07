@@ -625,6 +625,37 @@ body.nav-menu-open {
   overflow: hidden;
 }
 
+/* Tablet and small screens: compress navbar */
+@media (max-width: 860px) {
+  .navbar-container {
+    padding: 0 16px;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .navbar-logo {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .nav-link {
+    font-size: 17px;
+  }
+
+  .navbar-actions {
+    gap: 8px;
+  }
+
+  .btn-cta {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .login-link {
+    font-size: 15px;
+  }
+}
+
 /* Mobile styles for viewport max-width 860px */
 @media (max-width: 860px) {
   .navbar-container {
