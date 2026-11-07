@@ -65,52 +65,47 @@ const Why = () => {
 
       {/* Section 4: Double-Row Marquee */}
       <section className="why-marquee-section">
+        {/* Row 1: Left Scroll */}
         <div className="marquee-track-container">
           <div className="marquee-track marquee-left">
-            <div className="marquee-content">
-              <span className="text-white font-serif">SAME CRM</span>
-              <span className="text-gray-500 small-marquee-text">same output</span>
-              <span className="text-indigo-500 font-bold">SAME RESULTS</span>
-              <span className="text-white font-serif">SAME CRM</span>
-              <span className="text-gray-500 small-marquee-text">same output</span>
-              <span className="text-indigo-500 font-bold">SAME RESULTS</span>
-            </div>
-            <div className="marquee-content" aria-hidden="true">
-              <span className="text-white font-serif">SAME CRM</span>
-              <span className="text-gray-500 small-marquee-text">same output</span>
-              <span className="text-indigo-500 font-bold">SAME RESULTS</span>
-              <span className="text-white font-serif">SAME CRM</span>
-              <span className="text-gray-500 small-marquee-text">same output</span>
-              <span className="text-indigo-500 font-bold">SAME RESULTS</span>
-            </div>
+            <span className="marquee-item text-white">SAME CRM</span>
+            <span className="marquee-item small-marquee-text">same output</span>
+            <span className="marquee-item text-indigo-500 font-bold">SAME RESULTS</span>
+            <span className="marquee-item text-white">SAME CRM</span>
+            <span className="marquee-item small-marquee-text">same output</span>
+            <span className="marquee-item text-indigo-500 font-bold">SAME RESULTS</span>
+            {/* Seamless Loop Duplicate */}
+            <span className="marquee-item text-white">SAME CRM</span>
+            <span className="marquee-item small-marquee-text">same output</span>
+            <span className="marquee-item text-indigo-500 font-bold">SAME RESULTS</span>
+            <span className="marquee-item text-white">SAME CRM</span>
+            <span className="marquee-item small-marquee-text">same output</span>
+            <span className="marquee-item text-indigo-500 font-bold">SAME RESULTS</span>
           </div>
         </div>
 
+        {/* Row 2: Right Scroll */}
         <div className="marquee-track-container">
           <div className="marquee-track marquee-right">
-            <div className="marquee-content">
-              <span className="text-gray-500 small-marquee-text">same output</span>
-              <span className="text-indigo-500 font-bold">SAME RESULTS</span>
-              <span className="text-white font-serif">SAME CRM</span>
-              <span className="text-gray-500 small-marquee-text">same output</span>
-              <span className="text-indigo-500 font-bold">SAME RESULTS</span>
-              <span className="text-white font-serif">SAME CRM</span>
-            </div>
-            <div className="marquee-content" aria-hidden="true">
-              <span className="text-gray-500 small-marquee-text">same output</span>
-              <span className="text-indigo-500 font-bold">SAME RESULTS</span>
-              <span className="text-white font-serif">SAME CRM</span>
-              <span className="text-gray-500 small-marquee-text">same output</span>
-              <span className="text-indigo-500 font-bold">SAME RESULTS</span>
-              <span className="text-white font-serif">SAME CRM</span>
-            </div>
+            <span className="marquee-item small-marquee-text">same output</span>
+            <span className="marquee-item text-indigo-500 font-bold">SAME RESULTS</span>
+            <span className="marquee-item text-white">SAME CRM</span>
+            <span className="marquee-item small-marquee-text">same output</span>
+            <span className="marquee-item text-indigo-500 font-bold">SAME RESULTS</span>
+            <span className="marquee-item text-white">SAME CRM</span>
+            {/* Seamless Loop Duplicate */}
+            <span className="marquee-item small-marquee-text">same output</span>
+            <span className="marquee-item text-indigo-500 font-bold">SAME RESULTS</span>
+            <span className="marquee-item text-white">SAME CRM</span>
+            <span className="marquee-item small-marquee-text">same output</span>
+            <span className="marquee-item text-indigo-500 font-bold">SAME RESULTS</span>
+            <span className="marquee-item text-white">SAME CRM</span>
           </div>
         </div>
       </section>
 
       {/* Section 5: Bottom CTA Banner */}
       <section className="why-cta-section">
-        {/* Intersection Grid Lines & Plus Icon */}
         <div className="cta-plus-wrapper">
           <span className="cta-plus-icon">+</span>
         </div>
