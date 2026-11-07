@@ -126,28 +126,8 @@ const Navbar = () => {
       isExternal: true,
       isHighlighted: false,
     },
-    {
-      title: "APPS",
-      subtitle: "Extend your CRM",
-      previewTitle: "Vetted apps for your workspace",
-      previewDesc: "Install call recording, enrichment, Slack, Linear and more — every app built and maintained by Pulse.",
-      icon: <Settings size={16} />,
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
-      link: "/apps",
-      isExternal: false,
-      isHighlighted: false,
-    },
-    {
-      title: "PARTNERS",
-      subtitle: "Find a Pulse partner",
-      previewTitle: "Team up with a Pulse expert",
-      previewDesc: "Meet the certified agencies and consultants implementing Pulse for teams worldwide.",
-      icon: <Users size={16} />,
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600",
-      link: "/partners",
-      isExternal: false,
-      isHighlighted: false,
-    },
+   
+    
     {
       title: "RELEASES",
       subtitle: "Discover what's new",
