@@ -186,12 +186,12 @@
 
 /* Left Scrolling Row */
 .marquee-left {
-  animation: scrollLeft 25s linear infinite;
+  animation: scrollLeft 5s linear infinite;
 }
 
 /* Right Scrolling Row (Reverse) */
 .marquee-right {
-  animation: scrollRight 25s linear infinite;
+  animation: scrollRight 5s linear infinite;
 }
 
 .marquee-item {
@@ -365,6 +365,12 @@
   .cta-plus-wrapper {
     left: 10%;
   }
+
+  /* Tablet par marquee speed tez ki gayi hai */
+  .marquee-left,
+  .marquee-right {
+    animation-duration: 12s;
+  }
 }
 
 @media (max-width: 480px) {
@@ -407,5 +413,11 @@
 
   .small-marquee-text {
     font-size: 20px !important;
+  }
+
+  /* Mobile par marquee speed mazeed tez ki gayi hai */
+  .marquee-left,
+  .marquee-right {
+    animation-duration: 8s;
   }
 }

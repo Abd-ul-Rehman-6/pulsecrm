@@ -81,7 +81,7 @@
   align-items: center;
   gap: 60px;
   white-space: nowrap;
-  animation: scrollMarquee 25s linear infinite;
+  animation: scrollMarquee 10s linear infinite;
 }
 
 .marquee-track.paused {
