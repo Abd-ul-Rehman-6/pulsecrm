@@ -266,13 +266,51 @@ const Navbar = () => {
           </div>
         </nav>
 
+        {/* Mobile drawer - slides in from left when menu is open */}
+        <div className="mobile-drawer">
+          <div className="mobile-header">
+            <button
+              className={`close-mobile-drawer ${isMobileMenuOpen ? "active" : ""}`}
+              aria-label="Close menu"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+
+          <nav className="mobile-nav">
+            <ul>
+              <li>
+                <a href="/docs/getting-started" className="mobile-nav-link active">
+                  GETTING STARTED
+                </a>
+              </li>
+              <li>
+                <a href="/user-guide" className="mobile-nav-link">
+                  USER GUIDE
+                </a>
+              </li>
+              <li>
+                <a href="/developers" className="mobile-nav-link">
+                  DEVELOPERS
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div className="mobile-footer">
+            <a href="#login" className="mobile-login-link">
+              Log In
+            </a>
+            <button className="mobile-btn-cta">
+              Get Started Free
+            </button>
+          </div>
+        </div>
+
         <div className="navbar-actions">
-          <a href="#login" className="login-link">
-            Log In
-          </a>
-          <button className="btn-cta">
-            Get Started Free
-          </button>
+          <button className="btn-cta">Get Started Free</button>
         </div>
 
         <button
