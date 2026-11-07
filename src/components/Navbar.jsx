@@ -32,36 +32,28 @@ const Navbar = () => {
   const closeAllMenus = useCallback(() => {
     setIsResourcesOpen(false);
     setIsMobileMenuOpen(false);
-    // Remove body scroll-lock class
     if (typeof document !== 'undefined') {
       document.body.classList.remove('nav-menu-open');
     }
     clearCloseTimeout();
   }, [clearCloseTimeout]);
 
-  // Route change par menus band
   useEffect(() => {
     const timer = setTimeout(() => closeAllMenus(), 0);
     return () => clearTimeout(timer);
   }, [location.pathname, closeAllMenus]);
 
-  // Track mobile viewport state so component re-renders when DevTools device
-  // toolbar is toggled or window is resized. This ensures the hamburger menu
-  // and mobile layout activate immediately on initial load AND after resize.
   useEffect(() => {
     const mql = window.matchMedia(MOBILE_QUERY);
 
     const updateMobile = (event) => {
       setIsMobile(event.matches);
-      // Close menus when crossing the breakpoint
       if (event.matches !== isMobile) {
         closeAllMenus();
       }
     };
 
-    // Initialize on mount
     updateMobile(mql);
-
     mql.addEventListener('change', updateMobile);
 
     const closeOnResize = () => closeAllMenus();
@@ -71,10 +63,8 @@ const Navbar = () => {
       mql.removeEventListener('change', updateMobile);
       window.removeEventListener('resize', closeOnResize);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isMobile, closeAllMenus]);
 
-  // Click bahar / Escape se band
   useEffect(() => {
     if (!isMobileMenuOpen && !isResourcesOpen) return;
 
@@ -266,49 +256,6 @@ const Navbar = () => {
           </div>
         </nav>
 
-        {/* Mobile drawer - slides in from left when menu is open */}
-        <div className="mobile-drawer">
-          <div className="mobile-header">
-            <button
-              className={`close-mobile-drawer ${isMobileMenuOpen ? "active" : ""}`}
-              aria-label="Close menu"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-
-          <nav className="mobile-nav">
-            <ul>
-              <li>
-                <a href="/docs/getting-started" className="mobile-nav-link active">
-                  GETTING STARTED
-                </a>
-              </li>
-              <li>
-                <a href="/user-guide" className="mobile-nav-link">
-                  USER GUIDE
-                </a>
-              </li>
-              <li>
-                <a href="/developers" className="mobile-nav-link">
-                  DEVELOPERS
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          <div className="mobile-footer">
-            <a href="#login" className="mobile-login-link">
-              Log In
-            </a>
-            <button className="mobile-btn-cta">
-              Get Started Free
-            </button>
-          </div>
-        </div>
-
         <div className="navbar-actions">
           <button className="btn-cta">Get Started Free</button>
         </div>
@@ -321,7 +268,6 @@ const Navbar = () => {
             const next = !isMobileMenuOpen;
             setIsMobileMenuOpen(next);
             setIsResourcesOpen(false);
-            // Toggle body scroll-lock class
             if (typeof document !== 'undefined') {
               if (next) {
                 document.body.classList.add('nav-menu-open');

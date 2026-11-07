@@ -1,7 +1,7 @@
 /* Sticky Header Container — Menu */
 .navbar-header {
   width: 100%;
-  background-color: #0a382d; /* menu */
+  background-color: #0a382d;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: sticky;
   top: 0;
@@ -9,7 +9,6 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   font-family: 'poppin', sans-serif;
 }
-
 /* Inner Layout Alignment */
 .navbar-container {
   max-width: 1280px;
@@ -22,7 +21,6 @@
   gap: 16px;
   min-width: 0;
 }
-
 /* Logo Section */
 .navbar-logo {
   display: flex;
@@ -35,7 +33,7 @@
 .logo-icon {
   width: 32px;
   height: 32px;
-  background-color: #26b06d; /* fill */
+  background-color: #26b06d;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -72,14 +70,13 @@
 }
 
 .nav-link:hover {
-  color: #fdfeff; /* accent */
+  color: #fdfeff;
 }
 
-/* Active page link highlight */
+
 .nav-link.active {
-  color: #fcfeff; /* bright accent for active page */
+  color: #fcfeff;
   font-weight: 600;
-  
   padding-bottom: 4px;
 }
 
@@ -97,7 +94,7 @@
   align-items: center;
   gap: 6px;
   cursor: pointer;
-  height: 100%; /* Poori height cover karega taake mouse move smooth rahe */
+  height: 100%;
 }
 
 .dropdown-arrow {
@@ -109,7 +106,6 @@
 .dropdown-wrapper:hover .dropdown-arrow {
   transform: rotate(180deg);
 }
-
 /* Mega Dropdown Container (Wider layout for list + image preview) */
 .resources-mega-dropdown {
   position: absolute;
@@ -117,9 +113,6 @@
   left: 50%;
   transform: translateX(-50%);
   width: 620px;
-  /* index.css ki global `div { max-width: 100% }` rule is absolute
-     dropdown ko parent (sirf "Resources" text) ki width tak collapse
-     kar rahi thi — columns toot jaate the. */
   max-width: none;
   background: #ffffff;
   border-radius: 16px;
@@ -133,7 +126,6 @@
   isolation: isolate;
   animation: fadeInDropdown 0.2s ease-out;
 }
-
 @keyframes fadeInDropdown {
   from {
     opacity: 0;
@@ -152,7 +144,6 @@
   background-color: #ffffff;
   min-width: 0;
 }
-
 /* Dropdown Item Card */
 .dropdown-item-card {
   display: flex;
@@ -192,7 +183,6 @@
   color: #26b06d;
 }
 
-/* Text Content */
 .item-text-content {
   display: flex;
   flex-direction: column;
@@ -209,17 +199,12 @@
   text-transform: uppercase;
 }
 
-
-
-
-
 .item-subtitle {
   font-size: 14px;
   color: #64748b;
   font-weight: 400;
   line-height: 1.35;
 }
-
 /* Right Side Image Preview Pane */
 .dropdown-preview-pane {
   background: #ffffff;
@@ -231,7 +216,6 @@
   justify-content: flex-start;
   min-width: 0;
 }
-
 /* Preview Image */
 .preview-dynamic-image {
   width: 100%;
@@ -247,7 +231,6 @@
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Preview Caption */
 .preview-caption {
   text-align: left;
   color: #334155;
@@ -270,13 +253,12 @@
   font-weight: 400;
   line-height: 1.5;
 }
-
 /* Right Section Actions */
 .navbar-actions {
   display: flex;
   align-items: center;
   gap: 24px;
-  flex-shrink: 0; /* actions compress na hon */
+  flex-shrink: 0;
 }
 
 .login-link {
@@ -288,12 +270,11 @@
 }
 
 .login-link:hover {
-  color: #6ec1e4; /* accent */
+  color: #6ec1e4;
 }
-
 /* Main CTA Button (dark menu par bright fill) */
 .btn-cta {
-  background-color: #26b06d; /* fill */
+  background-color: #26b06d;
   color: #ffffff;
   font-size: 16px;
   font-weight: 600;
@@ -310,7 +291,6 @@
   box-shadow: 0 4px 12px rgba(38, 176, 109, 0.45);
   transform: translateY(-1px);
 }
-
 /* User Profile Image */
 .profile-avatar {
   width: 40px;
@@ -382,7 +362,7 @@
   }
 
   /* Hide desktop menu items and actions that don't fit mobile */
-  .navbar-menu {
+ .navbar-menu {
     display: none;
     position: absolute;
     top: 100%;
@@ -421,7 +401,7 @@
     overflow: hidden;
   }
 
-  .navbar-menu .nav-link {
+ .navbar-menu .nav-link {
     display: block;
     padding: 14px 4px;
     font-size: 17px;
@@ -727,15 +707,15 @@ body.nav-menu-open {
   }
 
   /* Resources mega-dropdown in mobile */
-  .resources-mega-dropdown {
-    position: static;
-    transform: none;
-    width: 100%;
+ .resources-mega-dropdown {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100%;
     grid-template-columns: 1fr;
     margin-top: 8px;
     padding: 12px;
     border-radius: 14px;
-    animation: none;
     box-shadow: none;
   }
 
