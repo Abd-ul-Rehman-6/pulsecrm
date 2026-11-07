@@ -388,22 +388,66 @@
 
   .steps-container {
     flex-direction: column;
-    gap: 36px;
-    align-items: center;
+    gap: 32px;
+    align-items: stretch;
+    max-width: 540px;
   }
 
+  /* Desktop horizontal line hide — uski jagah vertical segments */
   .steps-connector {
     display: none;
   }
 
   .step-item {
     width: 100%;
-    max-width: 460px;
+    max-width: none;
     padding: 0;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  /* Vertical connector: node → next node (left rail, cards se cross nahi hota) */
+  .step-item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 34px;
+    top: 68px;
+    bottom: -32px; /* gap ke barabar — next item ke node tak */
+    width: 3px;
+    border-radius: 9999px;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 48, 87, 0.4) 0%,
+      #6ec1e4 50%,
+      rgba(38, 176, 109, 0.9) 100%
+    );
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top center;
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1)
+      calc(var(--i, 0) * 0.16s + 0.35s);
+    z-index: 0;
+  }
+
+  .steps-container.is-visible .step-item:not(:last-child)::before {
+    transform: translateX(-50%) scaleY(1);
+  }
+
+  .step-node {
+    flex-shrink: 0;
   }
 
   .step-card {
-    margin-top: 22px;
+    margin-top: 0;
+    width: auto;
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .step-description {
+    margin: 0;
+    max-width: 100%;
   }
 }
 
@@ -444,6 +488,11 @@
 
   .steps-connector {
     transform: translateY(-50%) scaleX(1) !important;
+    transition: none !important;
+  }
+
+  .step-item:not(:last-child)::before {
+    transform: translateX(-50%) scaleY(1) !important;
     transition: none !important;
   }
 

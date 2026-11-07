@@ -4,7 +4,6 @@ import {
   Lightbulb,
   BookOpen,
   Code,
-  Settings,
   Users,
   Tag,
   ExternalLink,
