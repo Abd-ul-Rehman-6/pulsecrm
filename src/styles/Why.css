@@ -186,12 +186,12 @@
 
 /* Left Scrolling Row */
 .marquee-left {
-  animation: scrollLeft 5s linear infinite;
+  animation: scrollLeft 25s linear infinite;
 }
 
 /* Right Scrolling Row (Reverse) */
 .marquee-right {
-  animation: scrollRight 5s linear infinite;
+  animation: scrollRight 25s linear infinite;
 }
 
 .marquee-item {
@@ -344,6 +344,7 @@
     margin-left: 0;
   }
 
+  /* Fix for right-aligned section overflow on smaller screens */
   .right-title, .right-tag {
     text-align: left;
     justify-content: flex-start;
@@ -393,6 +394,11 @@
 
   .why-cta-subtext {
     font-size: 17px;
+  }
+
+  .right-title, .right-tag {
+    text-align: left;
+    justify-content: flex-start;
   }
 
   .marquee-item {

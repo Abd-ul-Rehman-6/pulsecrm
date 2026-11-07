@@ -2,7 +2,7 @@
 .user-guide-page {
   width: 100%;
   min-height: 100vh;
-  background-color: #0b0c0e; /* Dark background matching reference */
+  background-color: #0b0c0e;
   color: #ffffff;
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  flex-wrap: nowrap; /* links + buttons hamesha ek line pe */
+  flex-wrap: nowrap;
   padding: 0 40px;
   box-sizing: border-box;
   background-color: #0b0c0e;
@@ -44,8 +44,9 @@
   transition: color 0.2s ease;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
   white-space: nowrap;
+  position: relative;
+  padding-bottom: 2px;
 }
 
 /* Pulse logo — GETTING STARTED ke saath, click pe home page */
@@ -54,6 +55,7 @@
   align-items: center;
   flex-shrink: 0;
   text-decoration: none;
+  border-bottom: none !important; /* Logo ke neechay koi line nahi aayegi */
 }
 
 .doc-nav-logo {
@@ -83,7 +85,6 @@
 .doc-nav-link.active {
   color: #818cf8; /* Light purple underline highlight */
   border-bottom: 2px solid #818cf8;
-  padding-bottom: 4px;
 }
 
 .doc-nav-divider {
@@ -94,7 +95,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  flex-shrink: 0; /* buttons kabhi wrap karke niche na jayen */
+  flex-shrink: 0;
 }
 
 .doc-btn-login {
@@ -144,7 +145,6 @@
 .user-guide-title {
   font-size: 57px;
   font-weight: 400;
-  
   margin: 0 0 40px 0;
   letter-spacing: -0.5px;
 }
@@ -164,7 +164,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: hue-rotate(200deg) contrast(1.2); /* Blue accent effect */
+  filter: hue-rotate(200deg) contrast(1.2);
 }
 
 .user-guide-description {
@@ -264,22 +264,10 @@
   color: #cbd5e1;
 }
 
-/* RESPONSIVE */
-@media (max-width: 992px) {
-  .user-guide-container {
-    grid-template-columns: 1fr;
-  }
-  .user-guide-sidebar {
-    display: none;
-  }
-}
-
-
 /* NEW CONTENT SECTION STYLING */
 .content-section {
   margin-top: 80px;
   padding-top: 50px;
-  margin-top:-5px
 }
 
 .section-heading {
@@ -294,7 +282,6 @@
   font-size: 19px;
   color: #94a3b8;
   line-height: 1.6;
-  
 }
 
 /* CUSTOM BULLET LIST */
@@ -304,7 +291,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Do lines/items ke darmiyan ka total fasla */
+  gap: 16px;
 }
 
 .custom-bullet-list li {
@@ -314,7 +301,7 @@
   font-size: 17px;
   color: #cbd5e1;
   line-height: 1.5;
-  margin: 0; /* Default margin remove karne ke liye */
+  margin: 0;
   padding: 0;
 }
 .custom-bullet-list p {
@@ -335,7 +322,6 @@
   color: #ffffff;
   font-weight: 600;
 }
-
 
 /* EXPLORE THE USER GUIDE GRID CARDS */
 .guide-grid-cards {
@@ -389,38 +375,37 @@
   line-height: 1.4;
 }
 
-/* RESPONSIVE GRID FOR TABLETS/MOBILES */
 @media (max-width: 768px) {
   .guide-grid-cards {
     grid-template-columns: 1fr;
   }
 }
 
-/* MOBILE / TABLET RESPONSIVE — doc pages */
+/* MOBILE / TABLET RESPONSIVE — doc pages navbar */
 @media (max-width: 860px) {
   .doc-sub-nav {
     height: auto;
     min-height: 56px;
-    padding: 10px 16px;
-    flex-wrap: nowrap; /* buttons line ke andar hi rahen */
-    gap: 10px;
-  }
-
-  .doc-nav-left {
-    gap: 10px;
-    flex-wrap: nowrap;
+    padding: 8px 12px;
     overflow-x: auto;
+    white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
 
-  .doc-nav-left::-webkit-scrollbar {
+  .doc-sub-nav::-webkit-scrollbar {
     display: none;
+  }
+
+  .doc-nav-left {
+    gap: 12px;
+    flex-shrink: 0;
+    overflow-x: auto;
   }
 
   .doc-nav-link {
     font-size: 12px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
   }
 
   .doc-nav-logo {
@@ -430,14 +415,7 @@
   }
 
   .doc-nav-right {
-    gap: 8px;
-  }
-
-  .doc-nav-right .doc-btn-login,
-  .doc-nav-right .doc-btn-get-started {
-    padding: 7px 10px;
-    font-size: 11px;
-    white-space: nowrap;
+    display: none;
   }
 
   .user-guide-container {
@@ -474,7 +452,6 @@
     height: 180px;
   }
 
-  /* Floating ask bar — mobile pe full width chhota box */
   .floating-ask-container {
     left: 16px;
     right: 16px;
@@ -488,7 +465,7 @@
   }
 
   .ask-shortcuts {
-    display: none; /* mobile pe shortcuts chips hide */
+    display: none;
   }
 }
 
@@ -497,20 +474,18 @@
     font-size: 29px;
   }
   .doc-sub-nav {
-    padding: 8px 12px;
+    padding: 6px 10px;
+    gap: 8px;
   }
   .doc-nav-left .doc-nav-divider {
-    display: none;
+    display: inline-block;
   }
   .doc-nav-left {
     gap: 8px;
   }
   .doc-nav-link {
     font-size: 11px;
-    letter-spacing: 0.3px;
-  }
-  .doc-nav-right .doc-btn-login {
-    display: none; /* chhoti screen pe sirf GET STARTED */
+    letter-spacing: 0.2px;
   }
 }
 
@@ -559,7 +534,6 @@
   font-size: 15px;
 }
 
-
 /* ASK A QUESTION STICKY BOX STYLING */
 .ask-question-box {
   width: 100%;
@@ -571,8 +545,8 @@
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  position: sticky; /* Scroll karne par bhi apni position par fixed rahega */
-  top: 90px; /* Navbar ya top se distance */
+  position: sticky;
+  top: 90px;
   z-index: 10;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
@@ -624,32 +598,16 @@
   background-color: #2a2d35;
 }
 
-.ask-question-sticky-main {
-  position: sticky;
-  top: 80px; /* Sub-navbar ke neechay sticky rahega */
-  z-index: 50;
-  margin-bottom: 40px;
-  background-color: #0b0c0e; /* Background match karne ke liye taake peeche ka text na dikhe */
-  padding-bottom: 10px;
-}
-
-.ask-question-footer-box {
-  margin-top: 60px;
-  width: 100%;
-}
-
-/* FLOATING STICKY ASK A QUESTION BAR AT BOTTOM OF CONTENT */
 .user-guide-main {
   position: relative;
-  padding-bottom: 90px; /* Space for the floating bottom bar */
+  padding-bottom: 90px;
 }
 
 .floating-ask-container {
   position: fixed;
   bottom: 24px;
-  /* Width ko chota karne ke liye max-width aur width adjust ki gayi hai */
   width: 55%;
-  max-width: 52px; /* Is value ko aap mazeed kam ya zyada kar sakte hain */
+  max-width: 52px;
   z-index: 100;
   pointer-events: none;
 }
@@ -661,7 +619,6 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Mobile: stack sidebar below main content */
 @media (max-width: 900px) {
   .user-guide-container {
     grid-template-columns: 1fr;
@@ -683,7 +640,7 @@
   }
 
   .doc-sub-nav {
-    padding: 0 20px;
+    padding: 0 16px;
   }
 
   .floating-ask-container {
@@ -692,10 +649,6 @@
     left: 5%;
     bottom: 20px;
   }
-
-  .ask-question-box {
-    top: 80px;
-  }
 }
 
 @media (min-width: 1280px) {
@@ -703,4 +656,3 @@
     max-width: 820px;
   }
 }
-
