@@ -7,14 +7,24 @@ const UserGuide = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const exploreSection = document.getElementById("explore-user-guide");
-      if (exploreSection) {
-        const rect = exploreSection.getBoundingClientRect();
-        // Jab explore section screen ke upper ya mid-viewport mein aa jaye
+      const makePulseFitSection = document.getElementById("make-Pulse-fit");
+      const exploreUserGuideSection = document.getElementById("explore-user-guide");
+      
+      // Check make-Pulse-fit section first (it's the first section)
+      if (makePulseFitSection) {
+        const rect = makePulseFitSection.getBoundingClientRect();
+        // If make-Pulse-fit section is in the upper viewport, set it as active
+        if (rect.top <= 150 && rect.bottom < exploreUserGuideSection?.getBoundingClientRect()?.top) {
+          setActiveSection("make-Pulse-fit");
+          return;
+        }
+      }
+      
+      // Then check explore-user-guide section
+      if (exploreUserGuideSection) {
+        const rect = exploreUserGuideSection.getBoundingClientRect();
         if (rect.top <= 250) {
           setActiveSection("explore-user-guide");
-        } else {
-          setActiveSection("make-Pulse-fit");
         }
       }
     };
